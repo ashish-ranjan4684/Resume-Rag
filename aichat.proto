@@ -1,0 +1,15 @@
+syntax="proto3";
+
+package aichat;
+
+message Query{
+    string query=1;
+}
+
+message Answer{
+    string answer=1;
+}
+service AiChatService{
+
+    rpc AnswerQuery(Query) returns(stream Answer);
+}

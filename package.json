@@ -1,0 +1,31 @@
+{
+  "name": "rag",
+  "version": "1.0.0",
+  "description": "resume based rag chat app",
+  "keywords": [
+    "rag",
+    "llm",
+    "document-loader",
+    "chunking",
+    "vector-stores",
+    "retreival"
+  ],
+  "license": "ISC",
+  "author": "Ashish Ranjan",
+  "type": "commonjs",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.14.4",
+    "@grpc/proto-loader": "^0.8.1",
+    "@huggingface/inference": "^4.13.20",
+    "@langchain/textsplitters": "^1.0.1",
+    "chromadb": "^3.5.0",
+    "dotenv": "^17.4.2",
+    "markdown-to-text": "^0.1.1",
+    "ollama": "^0.6.3",
+    "pdf-parse": "^2.4.5"
+  }
+}
