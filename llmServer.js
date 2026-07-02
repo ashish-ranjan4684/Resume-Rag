@@ -205,7 +205,7 @@ server.addService(proto.AiChatService.service, {
 });
 
 const PORT = process.env.PORT || 50051;
-server.bindAsync(`0.0.0.0:${PORT}`, grpc.ServerCredentials.createInsecure(), (err, port) => {
+server.bindAsync(`10.0.0.6:${PORT}`, grpc.ServerCredentials.createInsecure(), (err, port) => {
     if (err) {
         console.error("Failed to bind server:", err);
         return;
