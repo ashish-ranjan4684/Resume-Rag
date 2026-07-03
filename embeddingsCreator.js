@@ -26,6 +26,12 @@ const client = new ChromaClient({
     port:8000,
 });
 
+if(!fs.existsSync(path.join(__dirname,"assets","resources"))){
+    fs.mkdirSync(path.join(__dirname,"assets","resources"),{
+        recursive:true
+    });
+}
+
 async function createResumeChunksAndEmbeddings(resumePdf, user){
     try{
         const resumeBuffer = new Uint8Array(fs.readFileSync(path.join(__dirname,"assets","resources",resumePdf)));
