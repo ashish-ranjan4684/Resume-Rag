@@ -25,7 +25,7 @@ const client = new ChromaClient({
     path: "http://localhost:8000"
 });
 
-const hfClient = new InferenceClient(process.env.GROQ_API_KEY1,{
+const hfClient = new InferenceClient(process.env.GROQ_API_KEY2,{
     endpointUrl: "https://api.groq.com/openai/v1"
 });
 
@@ -218,7 +218,6 @@ askQuestion();*/
 async function answerQuery(call){
     const query = call.request.query;
     const clientUser = call.request.client;
-    console.log(`Received query: ${query}`);
     if(!query){
         return call.destroy({
             code: grpc.status.INVALID_ARGUMENT,
@@ -297,7 +296,7 @@ server.addService(proto.AiChatService.service, {
     AnswerQuery: answerQuery
 });
 
-const PORT = process.env.LLM_PORT1 || 50051;
+const PORT = process.env.LLM_PORT2 || 50052;
 server.bindAsync(`10.0.0.6:${PORT}`, grpc.ServerCredentials.createInsecure(), (err, port) => {
     if (err) {
         console.error("Failed to bind server:", err);
