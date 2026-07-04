@@ -21,7 +21,6 @@ const ollama = new Ollama({
 });
 
 const client = new ChromaClient({
-    //path: "http://localhost:8000"
     host:"localhost",
     port:8000,
 });
