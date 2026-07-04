@@ -14,8 +14,8 @@ jobs:
         uses: appleboy/ssh-action@v1.2.0
         with:
           host: ${{ secrets.VPS8GB1_HOST }}
-          username: ${{ secrets.VPS8GB1.USERNAME }}
-          key: ${{ secrets.VPS8GB1.PRIVATE_KEY }}
+          username: ${{ secrets.VPS8GB1_USERNAME }}
+          key: ${{ secrets.VPS8GB1_PRIVATE_KEY }}
           script: |
             cd ~/Resume-Rag
             git pull
