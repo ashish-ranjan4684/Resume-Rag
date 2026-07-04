@@ -1,0 +1,25 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to vps
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.VPS8GB1_HOST }}
+          username: ${{ secrets.VPS8GB1.USERNAME }}
+          key: ${{ secrets.VPS8GB1.PRIVATE_KEY }}
+          script: |
+            cd ~/Resume-Rag
+            git pull
+            npm install
+            sudo systemctl restart llmServer
+            sudo systemctl restart llmServer2
+            sudo systemctl restart emneddingsCreator
